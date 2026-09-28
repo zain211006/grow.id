@@ -1,0 +1,2523 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Growthly — Digital Marketing Agency</title>
+  <meta name="description" content="Growthly adalah digital marketing agency yang membantu bisnis meningkatkan brand awareness, leads, traffic, dan penjualan.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #0f172a;
+      --text: #475569;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --white: #ffffff;
+      --success: #16a34a;
+      --radius: 18px;
+      --shadow: 0 15px 40px rgba(15, 23, 42, .08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-header p {
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: .3s;
+    }
+
+    header.scrolled {
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 5px 25px rgba(15,23,42,.07);
+    }
+
+    .navbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--dark);
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 160px 0 90px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37,99,235,.12), transparent 30%),
+        linear-gradient(180deg, #fff, #f8fafc);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 100px;
+      background: #eff6ff;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: var(--text);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 11px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--dark);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 55px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .stat span {
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    /* DASHBOARD */
+
+    .dashboard {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .dashboard-title {
+      font-weight: 800;
+    }
+
+    .dashboard-small {
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .growth {
+      color: var(--success);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .chart {
+      height: 220px;
+      display: flex;
+      align-items: end;
+      gap: 10px;
+      padding: 20px 5px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bar {
+      flex: 1;
+      background: linear-gradient(to top, #2563eb, #93c5fd);
+      border-radius: 7px 7px 0 0;
+      min-height: 25px;
+    }
+
+    .dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .mini-card span {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    /* TRUST */
+
+    .trusted {
+      padding: 45px 0;
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .trusted-title {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    .logos {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      color: #94a3b8;
+      font-size: 20px;
+      font-weight: 800;
+      flex-wrap: wrap;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: var(--radius);
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: var(--primary);
+      border-radius: 12px;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .service-card p {
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .learn {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* WHY US */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-content h2 {
+      font-family: "Manrope";
+      font-size: 43px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .why-content > p {
+      color: var(--text);
+      margin-bottom: 30px;
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      background: #dcfce7;
+      color: var(--success);
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    .analytics-box {
+      background: var(--dark);
+      color: white;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .analytics-box h3 {
+      margin-bottom: 25px;
+    }
+
+    .metric {
+      margin-bottom: 20px;
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+      font-size: 13px;
+    }
+
+    .progress {
+      height: 8px;
+      background: #334155;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      background: #60a5fa;
+      border-radius: inherit;
+    }
+
+    /* PROCESS */
+
+    .process {
+      background: var(--light);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      position: relative;
+      background: white;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .process-number {
+      font-size: 40px;
+      font-weight: 800;
+      color: #dbeafe;
+      margin-bottom: 15px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    /* PORTFOLIO */
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: white;
+      padding: 9px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .filter-btn.active {
+      background: var(--dark);
+      color: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .portfolio-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .portfolio-image {
+      height: 210px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #dbeafe, #f1f5f9);
+      font-size: 45px;
+    }
+
+    .portfolio-info {
+      padding: 22px;
+    }
+
+    .portfolio-info small {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .portfolio-info h3 {
+      margin: 5px 0 10px;
+    }
+
+    .portfolio-result {
+      font-weight: 800;
+      color: var(--success);
+    }
+
+    /* RESULTS */
+
+    .results {
+      background: var(--dark);
+      color: white;
+    }
+
+    .results .section-label {
+      color: #60a5fa;
+    }
+
+    .results .section-header p {
+      color: #94a3b8;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .result strong {
+      display: block;
+      font-size: 42px;
+      margin-bottom: 5px;
+    }
+
+    .result span {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      background: var(--light);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .price-card.popular {
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 5px 13px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .price-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .price-description {
+      color: var(--text);
+      font-size: 13px;
+      min-height: 42px;
+    }
+
+    .price {
+      font-size: 31px;
+      font-weight: 800;
+      margin: 20px 0;
+    }
+
+    .price small {
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .features {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .features li {
+      padding: 8px 0;
+      font-size: 13px;
+      color: #475569;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 800;
+      margin-right: 9px;
+    }
+
+    .price-card .btn {
+      width: 100%;
+    }
+
+    /* TESTIMONIAL */
+
+    .testimonial-wrapper {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .testimonial {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 45px;
+      box-shadow: var(--shadow);
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .testimonial p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .client {
+      font-weight: 800;
+    }
+
+    .client span {
+      display: block;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .testimonial-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* TEAM */
+
+    .team {
+      background: var(--light);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-photo {
+      height: 250px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #e2e8f0, #dbeafe);
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .team-card h3 {
+      font-size: 17px;
+    }
+
+    .team-card p {
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 22px 0;
+      background: transparent;
+      border: 0;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: .3s;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .faq-answer p {
+      padding-bottom: 20px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 150px;
+    }
+
+    /* BLOG */
+
+    .blog {
+      background: var(--light);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .blog-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .blog-image {
+      height: 180px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #dbeafe, #e2e8f0);
+      font-size: 40px;
+    }
+
+    .blog-content {
+      padding: 22px;
+    }
+
+    .blog-content small {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .blog-content h3 {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    .blog-content p {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 90px 0;
+    }
+
+    .cta-box {
+      background: var(--dark);
+      color: white;
+      border-radius: 25px;
+      padding: 70px 40px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-family: "Manrope";
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .cta-box p {
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+
+    .cta-note {
+      display: block;
+      color: #94a3b8;
+      font-size: 12px;
+      margin-top: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+    }
+
+    .contact-info h2 {
+      font-family: "Manrope";
+      font-size: 40px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .contact-info > p {
+      color: var(--text);
+      margin-bottom: 30px;
+    }
+
+    .contact-detail {
+      margin-bottom: 18px;
+    }
+
+    .contact-detail small {
+      color: #64748b;
+      display: block;
+    }
+
+    .contact-detail strong {
+      font-size: 15px;
+    }
+
+    .contact-form {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      outline: none;
+      background: white;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #020617;
+      color: white;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand p {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 15px;
+      max-width: 300px;
+    }
+
+    .footer-column h4 {
+      font-size: 13px;
+      margin-bottom: 17px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-bottom: 9px;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #1e293b;
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      font-size: 25px;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37,211,102,.3);
+      transition: .25s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* BACK TOP */
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 90px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--dark);
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+      z-index: 998;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 4%;
+        width: 92%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .result-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .process-grid,
+      .team-grid,
+      .blog-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .check-list {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .logos {
+        justify-content: center;
+      }
+
+      .copyright {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .testimonial {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header id="header">
+  <div class="container navbar">
+    <a href="#home" class="logo">Growth<span>ly.</span></a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact" class="nav-cta">Konsultasi Gratis</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="badge">DIGITAL MARKETING AGENCY</div>
+
+      <h1>
+        Bantu Bisnis Anda
+        <span>Tumbuh Lebih Cepat.</span>
+      </h1>
+
+      <p class="hero-description">
+        Kami membantu bisnis meningkatkan brand awareness, traffic,
+        leads, dan penjualan melalui strategi digital marketing
+        berbasis data.
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">
+          Konsultasi Gratis →
+        </a>
+
+        <a href="#portfolio" class="btn btn-outline">
+          Lihat Portfolio
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>100+</strong>
+          <span>Projects</span>
+        </div>
+
+        <div class="stat">
+          <strong>50+</strong>
+          <span>Happy Clients</span>
+        </div>
+
+        <div class="stat">
+          <strong>3X</strong>
+          <span>Average ROI</span>
+        </div>
+
+        <div class="stat">
+          <strong>5+</strong>
+          <span>Years Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+
+      <div class="dashboard-top">
+        <div>
+          <div class="dashboard-title">Marketing Overview</div>
+          <div class="dashboard-small">Performance this month</div>
+        </div>
+
+        <div class="growth">↑ 38.5%</div>
+      </div>
+
+      <div class="chart">
+        <div class="bar" style="height:35%"></div>
+        <div class="bar" style="height:45%"></div>
+        <div class="bar" style="height:42%"></div>
+        <div class="bar" style="height:58%"></div>
+        <div class="bar" style="height:65%"></div>
+        <div class="bar" style="height:72%"></div>
+        <div class="bar" style="height:86%"></div>
+        <div class="bar" style="height:96%"></div>
+      </div>
+
+      <div class="dashboard-cards">
+
+        <div class="mini-card">
+          <span>Revenue</span>
+          <strong>Rp185M</strong>
+        </div>
+
+        <div class="mini-card">
+          <span>Leads</span>
+          <strong>2,480</strong>
+        </div>
+
+        <div class="mini-card">
+          <span>ROAS</span>
+          <strong>3.8X</strong>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRUSTED -->
+<section class="trusted">
+  <div class="container">
+
+    <div class="trusted-title">
+      TRUSTED BY GROWING BUSINESSES
+    </div>
+
+    <div class="logos">
+      <span>NOVA</span>
+      <span>VERTEX</span>
+      <span>LUMINA</span>
+      <span>ORBIT</span>
+      <span>GROWIFY</span>
+      <span>PIXELCO</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">OUR SERVICES</span>
+      <h2>Solusi Digital Marketing untuk Pertumbuhan Bisnis</h2>
+      <p>
+        Strategi digital yang dirancang untuk membantu bisnis
+        mendapatkan lebih banyak pelanggan dan meningkatkan revenue.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">⌕</div>
+        <h3>SEO Optimization</h3>
+        <p>
+          Tingkatkan ranking Google dan dapatkan lebih banyak
+          organic traffic.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◎</div>
+        <h3>Social Media Marketing</h3>
+        <p>
+          Bangun brand awareness dan engagement melalui strategi
+          media sosial.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">↗</div>
+        <h3>Meta Ads</h3>
+        <p>
+          Optimalkan Facebook dan Instagram Ads untuk leads dan sales.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">G</div>
+        <h3>Google Ads</h3>
+        <p>
+          Jangkau calon pelanggan ketika mereka sedang mencari
+          produk Anda.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>Content Marketing</h3>
+        <p>
+          Konten yang relevan, edukatif, dan dirancang untuk
+          meningkatkan conversion.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⌘</div>
+        <h3>Website Development</h3>
+        <p>
+          Website cepat, responsif, profesional, dan conversion-focused.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">◆</div>
+        <h3>Branding</h3>
+        <p>
+          Bangun identitas brand yang kuat dan konsisten.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✉</div>
+        <h3>Email Marketing</h3>
+        <p>
+          Tingkatkan retention dan repeat sales dengan email marketing.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">▣</div>
+        <h3>Marketing Analytics</h3>
+        <p>
+          Gunakan data untuk mengambil keputusan marketing yang lebih tepat.
+        </p>
+        <a href="#contact" class="learn">Learn More →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY US -->
+<section class="section" id="about">
+
+  <div class="container why-grid">
+
+    <div class="why-content">
+
+      <span class="section-label">WHY GROWTHLY</span>
+
+      <h2>
+        Marketing yang fokus pada hasil nyata.
+      </h2>
+
+      <p>
+        Kami tidak hanya mengejar impressions dan likes.
+        Fokus kami adalah membantu bisnis menghasilkan growth
+        yang dapat diukur.
+      </p>
+
+      <div class="check-list">
+
+        <div class="check">
+          <span class="check-icon">✓</span>
+          Data-Driven Strategy
+        </div>
+
+        <div class="check">
+          <span class="check-icon">✓</span>
+          Transparent Reporting
+        </div>
+
+        <div class="check">
+          <span class="check-icon">✓</span>
+          Experienced Team
+        </div>
+
+        <div class="check">
+          <span class="check-icon">✓</span>
+          Customized Strategy
+        </div>
+
+        <div class="check">
+          <span class="check-icon">✓</span>
+          Conversion Focused
+        </div>
+
+        <div class="check">
+          <span class="check-icon">✓</span>
+          Long-Term Partnership
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="analytics-box">
+
+      <h3>Campaign Performance</h3>
+
+      <div class="metric">
+        <div class="metric-header">
+          <span>Brand Awareness</span>
+          <span>92%</span>
+        </div>
+        <div class="progress">
+          <span style="width:92%"></span>
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-header">
+          <span>Lead Generation</span>
+          <span>84%</span>
+        </div>
+        <div class="progress">
+          <span style="width:84%"></span>
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-header">
+          <span>Conversion Rate</span>
+          <span>76%</span>
+        </div>
+        <div class="progress">
+          <span style="width:76%"></span>
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-header">
+          <span>Customer Retention</span>
+          <span>88%</span>
+        </div>
+        <div class="progress">
+          <span style="width:88%"></span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="section process">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">OUR PROCESS</span>
+      <h2>Bagaimana Kami Bekerja?</h2>
+      <p>
+        Proses kerja sederhana, transparan, dan berorientasi pada hasil.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+        <div class="process-number">01</div>
+        <h3>Discovery</h3>
+        <p>
+          Memahami bisnis, target market, kompetitor,
+          dan tujuan Anda.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-number">02</div>
+        <h3>Strategy</h3>
+        <p>
+          Menyusun strategi digital marketing berdasarkan data.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-number">03</div>
+        <h3>Execution</h3>
+        <p>
+          Menjalankan campaign, content, advertising,
+          SEO, dan optimasi.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-number">04</div>
+        <h3>Optimization</h3>
+        <p>
+          Menganalisis hasil dan melakukan optimasi
+          secara berkelanjutan.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">OUR WORK</span>
+      <h2>Project yang Menghasilkan Impact</h2>
+      <p>
+        Beberapa hasil campaign dan project yang telah kami kerjakan.
+      </p>
+    </div>
+
+    <div class="filters">
+
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="seo">SEO</button>
+      <button class="filter-btn" data-filter="ads">Ads</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card" data-category="ads">
+        <div class="portfolio-image">🛒</div>
+        <div class="portfolio-info">
+          <small>E-COMMERCE</small>
+          <h3>Online Store Growth</h3>
+          <p class="portfolio-result">+185% Revenue</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="seo">
+        <div class="portfolio-image">📈</div>
+        <div class="portfolio-info">
+          <small>SEO</small>
+          <h3>Organic Traffic Growth</h3>
+          <p class="portfolio-result">+240% Traffic</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="social">
+        <div class="portfolio-image">📱</div>
+        <div class="portfolio-info">
+          <small>SOCIAL MEDIA</small>
+          <h3>Fashion Brand</h3>
+          <p class="portfolio-result">+320% Engagement</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="branding">
+        <div class="portfolio-image">◆</div>
+        <div class="portfolio-info">
+          <small>BRANDING</small>
+          <h3>Modern Brand Identity</h3>
+          <p class="portfolio-result">New Brand Launch</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="ads">
+        <div class="portfolio-image">🎯</div>
+        <div class="portfolio-info">
+          <small>GOOGLE ADS</small>
+          <h3>Local Business</h3>
+          <p class="portfolio-result">3.8X ROAS</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-category="social">
+        <div class="portfolio-image">🚀</div>
+        <div class="portfolio-info">
+          <small>SOCIAL MEDIA</small>
+          <h3>Startup Growth</h3>
+          <p class="portfolio-result">+150K Reach</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- RESULTS -->
+<section class="section results">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">RESULTS</span>
+      <h2>Results That Speak</h2>
+      <p>
+        Kami mengukur keberhasilan melalui angka yang benar-benar
+        memberikan dampak pada bisnis.
+      </p>
+    </div>
+
+    <div class="result-grid">
+
+      <div class="result">
+        <strong>185%</strong>
+        <span>Revenue Growth</span>
+      </div>
+
+      <div class="result">
+        <strong>240%</strong>
+        <span>Lead Generation</span>
+      </div>
+
+      <div class="result">
+        <strong>3.8X</strong>
+        <span>Average ROAS</span>
+      </div>
+
+      <div class="result">
+        <strong>127%</strong>
+        <span>Organic Traffic</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">PRICING</span>
+      <h2>Harga Sederhana & Transparan</h2>
+      <p>
+        Pilih paket yang sesuai dengan kebutuhan bisnis Anda.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+
+        <h3>Starter</h3>
+
+        <p class="price-description">
+          Untuk bisnis yang baru memulai digital marketing.
+        </p>
+
+        <div class="price">
+          Rp2,5 Jt
+          <small>/bulan</small>
+        </div>
+
+        <ul class="features">
+          <li>Social Media Management</li>
+          <li>8 Content / Month</li>
+          <li>Basic Analytics</li>
+          <li>Monthly Report</li>
+          <li>Basic Strategy</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline">
+          Get Started
+        </a>
+
+      </div>
+
+
+      <div class="price-card popular">
+
+        <div class="popular-badge">MOST POPULAR</div>
+
+        <h3>Growth</h3>
+
+        <p class="price-description">
+          Untuk bisnis yang ingin mempercepat pertumbuhan.
+        </p>
+
+        <div class="price">
+          Rp5 Jt
+          <small>/bulan</small>
+        </div>
+
+        <ul class="features">
+          <li>Social Media Management</li>
+          <li>16 Content / Month</li>
+          <li>Meta Ads Management</li>
+          <li>Google Ads Management</li>
+          <li>SEO Basic</li>
+          <li>Analytics Dashboard</li>
+          <li>Monthly Strategy Meeting</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">
+          Start Growing
+        </a>
+
+      </div>
+
+
+      <div class="price-card">
+
+        <h3>Scale</h3>
+
+        <p class="price-description">
+          Solusi lengkap untuk bisnis yang ingin scale-up.
+        </p>
+
+        <div class="price">
+          Custom
+        </div>
+
+        <ul class="features">
+          <li>Full Digital Marketing</li>
+          <li>SEO</li>
+          <li>Meta Ads</li>
+          <li>Google Ads</li>
+          <li>Content Marketing</li>
+          <li>Branding</li>
+          <li>Advanced Analytics</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-outline">
+          Contact Sales
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIAL -->
+<section class="section" id="testimonials">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">TESTIMONIALS</span>
+      <h2>Apa Kata Klien Kami?</h2>
+    </div>
+
+    <div class="testimonial-wrapper">
+
+      <div class="testimonial">
+
+        <div class="stars">★★★★★</div>
+
+        <p id="testimonialText">
+          "Tim Growthly sangat profesional. Dalam 3 bulan,
+          leads bisnis kami meningkat lebih dari dua kali lipat."
+        </p>
+
+        <div class="client" id="clientName">
+          Andi Pratama
+          <span>Founder, Nova Store</span>
+        </div>
+
+      </div>
+
+      <div class="testimonial-buttons">
+        <button class="arrow" id="prevTestimonial">←</button>
+        <button class="arrow" id="nextTestimonial">→</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TEAM -->
+<section class="section team">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">OUR TEAM</span>
+      <h2>Meet Our Team</h2>
+      <p>
+        Tim kreatif dan strategis yang siap membantu bisnis Anda.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-photo">👨🏻‍💼</div>
+        <h3>Raka Wijaya</h3>
+        <p>Founder & CEO</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">👩🏻‍💻</div>
+        <h3>Nadia Putri</h3>
+        <p>Marketing Strategist</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">👨🏻‍💻</div>
+        <h3>Fajar Ramadhan</h3>
+        <p>Performance Specialist</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">👩🏻‍🎨</div>
+        <h3>Sarah Ananda</h3>
+        <p>Creative Director</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">FAQ</span>
+      <h2>Pertanyaan yang Sering Ditanyakan</h2>
+    </div>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Apa saja layanan yang tersedia?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Kami menyediakan SEO, Social Media Marketing, Meta Ads,
+            Google Ads, Content Marketing, Branding, Website Development,
+            dan Marketing Analytics.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah bisa custom package?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Ya. Kami dapat membuat paket custom berdasarkan kebutuhan,
+            target, dan budget marketing bisnis Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Berapa lama hasil digital marketing terlihat?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Waktu berbeda untuk setiap channel. Advertising biasanya
+            menghasilkan data lebih cepat, sedangkan SEO membutuhkan
+            proses yang lebih panjang.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah mendapatkan laporan?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Ya. Setiap campaign mendapatkan laporan performa secara
+            berkala sehingga Anda dapat melihat perkembangan campaign.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah melayani UMKM?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Ya. Kami menyediakan layanan untuk UMKM, startup,
+            personal brand, toko online, hingga perusahaan.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOG -->
+<section class="section blog" id="blog">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">INSIGHTS</span>
+      <h2>Digital Marketing Insights</h2>
+      <p>
+        Tips dan strategi untuk membantu bisnis Anda berkembang.
+      </p>
+    </div>
+
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="blog-image">📈</div>
+        <div class="blog-content">
+          <small>SEO</small>
+          <h3>7 Strategi SEO untuk Meningkatkan Traffic Website</h3>
+          <p>
+            Pelajari strategi SEO yang dapat membantu website
+            mendapatkan lebih banyak pengunjung.
+          </p>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">📱</div>
+        <div class="blog-content">
+          <small>SOCIAL MEDIA</small>
+          <h3>Cara Membangun Brand di Media Sosial</h3>
+          <p>
+            Strategi sederhana untuk meningkatkan awareness
+            dan engagement.
+          </p>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">🎯</div>
+        <div class="blog-content">
+          <small>ADVERTISING</small>
+          <h3>Cara Meningkatkan ROAS Meta Ads</h3>
+          <p>
+            Beberapa strategi optimasi campaign agar budget
+            advertising lebih efektif.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>Ready to Grow Your Business?</h2>
+
+      <p>
+        Diskusikan kebutuhan digital marketing bisnis Anda
+        bersama tim kami.
+      </p>
+
+      <a href="#contact" class="btn btn-primary">
+        Konsultasi Gratis →
+      </a>
+
+      <span class="cta-note">
+        Gratis • Tanpa komitmen • Respon dalam 1×24 jam
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+
+      <span class="section-label">CONTACT</span>
+
+      <h2>Mari Bicarakan Bisnis Anda.</h2>
+
+      <p>
+        Isi form di samping dan tim kami akan menghubungi Anda
+        untuk melakukan konsultasi awal.
+      </p>
+
+      <div class="contact-detail">
+        <small>WhatsApp</small>
+        <strong>+62 812-3456-7890</strong>
+      </div>
+
+      <div class="contact-detail">
+        <small>Email</small>
+        <strong>hello@growthly.id</strong>
+      </div>
+
+      <div class="contact-detail">
+        <small>Business Hours</small>
+        <strong>Senin – Jumat, 09.00 – 17.00</strong>
+      </div>
+
+    </div>
+
+
+    <form class="contact-form" id="contactForm">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Nama</label>
+          <input type="text" id="name" placeholder="Nama Anda" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="email@contoh.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>WhatsApp</label>
+          <input type="tel" id="phone" placeholder="08xxxxxxxxxx" required>
+        </div>
+
+        <div class="form-group">
+          <label>Nama Bisnis</label>
+          <input type="text" id="business" placeholder="Nama bisnis Anda">
+        </div>
+
+        <div class="form-group full">
+          <label>Layanan yang Dibutuhkan</label>
+
+          <select id="service">
+            <option value="">Pilih layanan</option>
+            <option>SEO</option>
+            <option>Social Media Marketing</option>
+            <option>Meta Ads</option>
+            <option>Google Ads</option>
+            <option>Website Development</option>
+            <option>Branding</option>
+            <option>Content Marketing</option>
+            <option>Full Digital Marketing</option>
+          </select>
+
+        </div>
+
+        <div class="form-group full">
+          <label>Budget Marketing</label>
+
+          <select id="budget">
+            <option value="">Pilih budget</option>
+            <option>Di bawah Rp2.500.000</option>
+            <option>Rp2.500.000 - Rp5.000.000</option>
+            <option>Rp5.000.000 - Rp10.000.000</option>
+            <option>Di atas Rp10.000.000</option>
+          </select>
+
+        </div>
+
+        <div class="form-group full">
+          <label>Pesan</label>
+
+          <textarea id="message" placeholder="Ceritakan kebutuhan bisnis Anda..."></textarea>
+
+        </div>
+
+        <div class="form-group full">
+          <button type="submit" class="btn btn-primary">
+            Kirim Permintaan Konsultasi →
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <div class="logo">
+          Growth<span>ly.</span>
+        </div>
+
+        <p>
+          Digital marketing agency yang membantu bisnis tumbuh
+          melalui strategi marketing berbasis data.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Services</h4>
+        <a href="#services">SEO</a>
+        <a href="#services">Social Media</a>
+        <a href="#services">Ads</a>
+        <a href="#services">Website</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <a href="#blog">Blog</a>
+        <a href="#portfolio">Case Studies</a>
+        <a href="#contact">Consultation</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 Growthly. All rights reserved.</span>
+      <span>Made for business growth.</span>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+<a
+  href="https://wa.me/6281234567890?text=Halo%20Growthly,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20digital%20marketing."
+  target="_blank"
+  class="whatsapp"
+  aria-label="Chat WhatsApp"
+>
+  ☎
+</a>
+
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop">↑</button>
+
+
+<script>
+
+  /* NAVBAR */
+
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
+    const backTop = document.getElementById("backTop");
+
+    if (window.scrollY > 500) {
+      backTop.classList.add("show");
+    } else {
+      backTop.classList.remove("show");
+    }
+
+  });
+
+
+  /* MOBILE MENU */
+
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+
+  /* BACK TO TOP */
+
+  document.getElementById("backTop").addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+
+  /* PORTFOLIO FILTER */
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      filterButtons.forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+
+      portfolioCards.forEach(card => {
+
+        if (
+          filter === "all" ||
+          card.dataset.category === filter
+        ) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+
+      });
+
+    });
+
+  });
+
+
+  /* FAQ */
+
+  const faqQuestions =
+    document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+      const item = question.parentElement;
+
+      document.querySelectorAll(".faq-item").forEach(other => {
+        if (other !== item) {
+          other.classList.remove("active");
+        }
+      });
+
+      item.classList.toggle("active");
+
+    });
+
+  });
+
+
+  /* TESTIMONIAL */
+
+  const testimonials = [
+
+    {
+      text: '"Tim Growthly sangat profesional. Dalam 3 bulan, leads bisnis kami meningkat lebih dari dua kali lipat."',
+      name: "Andi Pratama",
+      role: "Founder, Nova Store"
+    },
+
+    {
+      text: '"Strategi advertising mereka sangat membantu. ROAS campaign kami meningkat secara signifikan."',
+      name: "Dina Maharani",
+      role: "Marketing Manager, Lumina"
+    },
+
+    {
+      text: '"Komunikasi sangat baik dan laporan campaign mudah dipahami. Sangat recommended."',
+      name: "Budi Santoso",
+      role: "Owner, Vertex Coffee"
+    }
+
+  ];
+
+  let currentTestimonial = 0;
+
+  function showTestimonial(index) {
+
+    const item = testimonials[index];
+
+    document.getElementById("testimonialText").textContent =
+      item.text;
+
+    document.getElementById("clientName").innerHTML =
+      `${item.name}<span>${item.role}</span>`;
+
+  }
+
+  document
+    .getElementById("nextTestimonial")
+    .addEventListener("click", () => {
+
+      currentTestimonial =
+        (currentTestimonial + 1) % testimonials.length;
+
+      showTestimonial(currentTestimonial);
+
+    });
+
+  document
+    .getElementById("prevTestimonial")
+    .addEventListener("click", () => {
+
+      currentTestimonial =
+        (currentTestimonial - 1 + testimonials.length) %
+        testimonials.length;
+
+      showTestimonial(currentTestimonial);
+
+    });
+
+
+  /* CONTACT FORM -> WHATSAPP */
+
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const email =
+        document.getElementById("email").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const business =
+        document.getElementById("business").value;
+
+      const service =
+        document.getElementById("service").value;
+
+      const budget =
+        document.getElementById("budget").value;
+
+      const message =
+        document.getElementById("message").value;
+
+      const text =
+`Halo Growthly, saya ingin berkonsultasi.
+
+Nama: ${name}
+Email: ${email}
+WhatsApp: ${phone}
+Bisnis: ${business}
+Layanan: ${service}
+Budget: ${budget}
+
+Pesan:
+${message}`;
+
+      const whatsappURL =
+        "https://wa.me/6281234567890?text=" +
+        encodeURIComponent(text);
+
+      window.open(whatsappURL, "_blank");
+
+    });
+
+</script>
+
+</body>
+</html>
+```
